@@ -8,7 +8,7 @@ export const profile = {
   email: "jineshvachhani@gmail.com",
   phone: "+91 95370 94095",
   phoneHref: "tel:+919537094095",
-  linkedin: "https://www.linkedin.com/in/jinesh-vachhani-19a0162",
+  linkedin: "https://www.linkedin.com/in/jinesh-vachhani-19a0162ab/",
   location: "India · IST (UTC+05:30)",
   // Set to false to hide the "open to roles" badge.
   available: true,
