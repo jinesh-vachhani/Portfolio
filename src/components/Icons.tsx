@@ -22,7 +22,13 @@ export const DownloadIcon = ({ className = "size-4" }: P) => (
   </svg>
 );
 
-export const PinIcon = ({ className = "size-4" }: P) => (
+export const PhoneIcon = ({ className = "size-4" }: P) => (
+  <svg viewBox="0 0 24 24" className={className} {...base}>
+    <path d="M5 4h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 6.1 6.1l1.4-2.3L20 15.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z" />
+  </svg>
+);
+
+export const PinIcon =({ className = "size-4" }: P) => (
   <svg viewBox="0 0 24 24" className={className} {...base}>
     <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" />
     <circle cx="12" cy="9.5" r="2.5" />

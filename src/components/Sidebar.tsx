@@ -1,6 +1,6 @@
 import { profile } from "@/data/resume";
 import { EmailButton } from "./EmailButton";
-import { DownloadIcon, LinkedInIcon, MailIcon, PinIcon } from "./Icons";
+import { DownloadIcon, LinkedInIcon, MailIcon, PhoneIcon, PinIcon } from "./Icons";
 import { SectionNav } from "./SectionNav";
 
 export function Sidebar({ hasResume }: { hasResume: boolean }) {
@@ -14,7 +14,24 @@ export function Sidebar({ hasResume }: { hasResume: boolean }) {
         <p className="mt-2 text-lg text-fg/90">{profile.title}</p>
         <p className="mt-1 text-sm text-muted">{profile.specialty}</p>
 
-        <div className="mt-6 flex flex-col gap-2.5 text-sm">
+        <div className="mt-6 flex flex-col gap-1.5">
+          <a
+            href={profile.phoneHref}
+            className="inline-flex w-fit items-center gap-2.5 text-xl font-semibold tracking-tight text-fg transition-colors hover:text-accent"
+          >
+            <PhoneIcon className="size-5 text-accent" />
+            {profile.phone}
+          </a>
+          <a
+            href={`mailto:${profile.email}`}
+            className="inline-flex w-fit items-center gap-2.5 text-[15px] break-all text-muted transition-colors hover:text-accent"
+          >
+            <MailIcon className="size-5 text-accent" />
+            {profile.email}
+          </a>
+        </div>
+
+        <div className="mt-5 flex flex-col gap-2.5 text-sm">
           {profile.available && (
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-accent/30 bg-accent-soft px-3 py-1 font-medium text-accent">
               <span className="relative flex size-2">

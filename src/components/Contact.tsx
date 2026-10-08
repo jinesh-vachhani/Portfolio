@@ -1,7 +1,7 @@
 import { profile } from "@/data/resume";
-import { CopyEmail } from "./CopyEmail";
+import { CopyButton } from "./CopyButton";
 import { EmailButton } from "./EmailButton";
-import { ArrowIcon, DownloadIcon, LinkedInIcon, MailIcon } from "./Icons";
+import { ArrowIcon, DownloadIcon, LinkedInIcon, MailIcon, PhoneIcon } from "./Icons";
 import { Section } from "./Section";
 
 export function Contact({ hasResume }: { hasResume: boolean }) {
@@ -11,17 +11,34 @@ export function Contact({ hasResume }: { hasResume: boolean }) {
         <h3 className="text-2xl font-semibold tracking-tight text-fg sm:text-3xl">Let&apos;s talk about your team.</h3>
         <p className="mt-3 max-w-xl text-[16px] leading-relaxed text-muted">
           I&apos;m interested in backend and full-stack roles where reliability, real-time systems and clean API
-          design matter. The fastest way to reach me is email.
+          design matter. Call or email, whichever is easier for you.
         </p>
 
-        <div className="mt-7 flex flex-wrap items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3">
-          <MailIcon className="size-4 text-faint" />
-          <a href={`mailto:${profile.email}`} className="min-w-0 font-mono text-sm break-all text-fg hover:text-accent">
-            {profile.email}
-          </a>
-          <span className="ml-auto">
-            <CopyEmail email={profile.email} />
-          </span>
+        <div className="mt-7 divide-y divide-line rounded-xl border border-line bg-surface">
+          <div className="flex flex-wrap items-center gap-3 px-4 py-3.5">
+            <PhoneIcon className="size-5 text-accent" />
+            <a href={profile.phoneHref} className="text-lg font-semibold tracking-tight text-fg hover:text-accent">
+              {profile.phone}
+            </a>
+            <span className="no-print ml-auto flex gap-2">
+              <a
+                href={profile.phoneHref}
+                className="rounded-md bg-accent px-3 py-2 text-xs font-medium text-accent-fg transition-opacity hover:opacity-90 sm:py-1"
+              >
+                Call
+              </a>
+              <CopyButton text={profile.phone} />
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center gap-3 px-4 py-3.5">
+            <MailIcon className="size-5 text-accent" />
+            <a href={`mailto:${profile.email}`} className="min-w-0 font-mono text-sm break-all text-fg hover:text-accent">
+              {profile.email}
+            </a>
+            <span className="no-print ml-auto">
+              <CopyButton text={profile.email} />
+            </span>
+          </div>
         </div>
 
         <div className="no-print mt-5 flex flex-wrap gap-3">

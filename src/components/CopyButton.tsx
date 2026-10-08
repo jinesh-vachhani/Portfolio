@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 
-export function CopyEmail({ email }: { email: string }) {
+export function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) {
   const [copied, setCopied] = useState(false);
 
   return (
     <button
       type="button"
       onClick={() =>
-        navigator.clipboard?.writeText(email).then(() => {
+        navigator.clipboard?.writeText(text).then(() => {
           setCopied(true);
           setTimeout(() => setCopied(false), 1800);
         })
@@ -17,7 +17,7 @@ export function CopyEmail({ email }: { email: string }) {
       className="rounded-md border border-line bg-surface px-3 py-2 text-xs sm:py-1 font-medium text-muted transition-colors hover:border-faint hover:text-fg"
       aria-live="polite"
     >
-      {copied ? "Copied ✓" : "Copy"}
+      {copied ? "Copied ✓" : label}
     </button>
   );
 }
