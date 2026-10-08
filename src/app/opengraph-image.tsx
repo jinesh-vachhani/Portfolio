@@ -25,6 +25,7 @@ export default async function Image() {
           <div
             style={{
               display: "flex",
+              flexShrink: 0,
               width: 88,
               height: 88,
               alignItems: "center",
@@ -40,7 +41,8 @@ export default async function Image() {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontSize: 60, fontWeight: 700, letterSpacing: -1.5 }}>{profile.name}</div>
-            <div style={{ fontSize: 28, color: "#565b68" }}>{`${profile.title} · ${profile.specialty}`}</div>
+            <div style={{ fontSize: 28, color: "#565b68" }}>{profile.title}</div>
+            <div style={{ fontSize: 24, color: "#0d6b5b", marginTop: 2 }}>{profile.specialty}</div>
           </div>
         </div>
 

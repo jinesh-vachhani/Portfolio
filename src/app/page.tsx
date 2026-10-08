@@ -21,7 +21,7 @@ export default function Home() {
         <Skills />
         <Contact hasResume={hasResume} />
         <footer className="border-t border-line py-8 text-sm text-faint">
-          © {profile.name} · Built with Next.js
+          © {profile.name}
         </footer>
       </main>
     </div>

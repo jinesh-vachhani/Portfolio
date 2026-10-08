@@ -4,7 +4,7 @@ export const profile = {
   name: "Jinesh Vachhani",
   initials: "JV",
   title: "Software Development Engineer II",
-  specialty: "Backend · Node.js · Distributed Systems",
+  specialty: "Backend-focused Full-Stack · Node.js · React",
   email: "jineshvachhani@gmail.com",
   phone: "+91 95370 94095",
   phoneHref: "tel:+919537094095",

@@ -80,10 +80,6 @@ export function Sidebar({ hasResume }: { hasResume: boolean }) {
       </div>
 
       <SectionNav />
-
-      <p className="no-print mt-auto hidden text-xs text-faint lg:block">
-        Prefer a document? Use your browser&apos;s print to save this page as a PDF.
-      </p>
     </header>
   );
 }
