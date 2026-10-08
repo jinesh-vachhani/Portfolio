@@ -1,4 +1,5 @@
 import { profile } from "@/data/resume";
+import { EmailButton } from "./EmailButton";
 import { DownloadIcon, LinkedInIcon, MailIcon, PinIcon } from "./Icons";
 import { SectionNav } from "./SectionNav";
 
@@ -30,13 +31,14 @@ export function Sidebar({ hasResume }: { hasResume: boolean }) {
         </div>
 
         <div className="no-print mt-8 flex flex-wrap gap-2.5">
-          <a
-            href={`mailto:${profile.email}`}
+          <EmailButton
+            email={profile.email}
+            subject="Opportunity for Jinesh"
             className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-accent-fg transition-opacity hover:opacity-90"
           >
             <MailIcon />
             Email me
-          </a>
+          </EmailButton>
           {hasResume && (
             <a
               href={profile.resumePath}

@@ -1,5 +1,6 @@
 import { profile } from "@/data/resume";
 import { CopyEmail } from "./CopyEmail";
+import { EmailButton } from "./EmailButton";
 import { ArrowIcon, DownloadIcon, LinkedInIcon, MailIcon } from "./Icons";
 import { Section } from "./Section";
 
@@ -15,7 +16,7 @@ export function Contact({ hasResume }: { hasResume: boolean }) {
 
         <div className="mt-7 flex flex-wrap items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3">
           <MailIcon className="size-4 text-faint" />
-          <a href={`mailto:${profile.email}`} className="font-mono text-sm text-fg hover:text-accent">
+          <a href={`mailto:${profile.email}`} className="min-w-0 font-mono text-sm break-all text-fg hover:text-accent">
             {profile.email}
           </a>
           <span className="ml-auto">
@@ -24,13 +25,14 @@ export function Contact({ hasResume }: { hasResume: boolean }) {
         </div>
 
         <div className="no-print mt-5 flex flex-wrap gap-3">
-          <a
-            href={`mailto:${profile.email}?subject=${encodeURIComponent("Opportunity for Jinesh")}`}
+          <EmailButton
+            email={profile.email}
+            subject="Opportunity for Jinesh"
             className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-medium text-accent-fg transition-opacity hover:opacity-90"
           >
             <MailIcon />
             Send an email
-          </a>
+          </EmailButton>
           {hasResume && (
             <a
               href={profile.resumePath}

@@ -14,7 +14,7 @@ export function CopyEmail({ email }: { email: string }) {
           setTimeout(() => setCopied(false), 1800);
         })
       }
-      className="rounded-md border border-line bg-surface px-2.5 py-1 text-xs font-medium text-muted transition-colors hover:border-faint hover:text-fg"
+      className="rounded-md border border-line bg-surface px-3 py-2 text-xs sm:py-1 font-medium text-muted transition-colors hover:border-faint hover:text-fg"
       aria-live="polite"
     >
       {copied ? "Copied ✓" : "Copy"}
